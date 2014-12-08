@@ -46,21 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\ObjectDestroyer.cs" />
      <Compile Include="Assets\Scripts\ParticleKiller.cs" />
      <Compile Include="Assets\Scripts\Scrapped code\WeaponScript.cs" />
+     <Compile Include="Assets\Scripts\SoundEmitter.cs" />
      <Compile Include="Assets\Scripts\TimeFreeze.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <None Include="Assets\Shaders\GreyScale.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{88C06857-678A-F763-AADF-5E53A9F53766}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{5985A11A-5417-ED55-D9AB-52019346EE0C}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

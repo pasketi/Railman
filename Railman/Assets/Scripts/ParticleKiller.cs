@@ -14,8 +14,8 @@ public class ParticleKiller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (birthTime + lifeTime <= Time.time){
-			Debug.Log (gameObject + " " + (lifeTime + birthTime) + " - " + birthTime);
-			Destroy(gameObject);
+			//Debug.Log (gameObject + " " + (lifeTime + birthTime) + " - " + birthTime);
+			DestroyImmediate(gameObject);
 		}
 	}
 }

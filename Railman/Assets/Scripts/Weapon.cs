@@ -3,20 +3,23 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour {
 
+	public GameObject hitEffect;
+	public AudioSource soundEmitter;
+
 	private const int def = 0, target = 8, wall = 9;
 	bool hitWall = false;
 
 	Vector3 mid;
-	public GameObject hitEffect;
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown(0)){
+			Instantiate (soundEmitter, Camera.main.transform.position, Quaternion.identity);
 			mid = new Vector3(Screen.width/2, Screen.height/2);
 			Ray ray = Camera.main.ScreenPointToRay (mid);
 			RaycastHit hit;
@@ -25,21 +28,13 @@ public class Weapon : MonoBehaviour {
 				if (Physics.Raycast (ray, out hit)){
 					if (hit.transform.gameObject.layer == target) {
 						Debug.Log ("Hit a target! Target destroyed!");
-						/*if (Time.timeScale != 0){
-							DestroyImmediate(hit.transform.gameObject);
-						} else {*/
-							//Destroy(hit.transform.gameObject);
-							hit.collider.enabled = false;
-						//}
+						hit.collider.enabled = false;
+						hit.transform.gameObject.tag = "Doomed";
 						Instantiate (hitEffect, hit.point, Quaternion.identity);
 					} else if (hit.transform.gameObject.layer == def) {
 						Debug.Log ("Hit an object! Object destroyed!");
-						/*if (Time.timeScale != 0){
-							DestroyImmediate(hit.transform.gameObject);
-						} else {*/
-							//Destroy(hit.transform.gameObject);
-							hit.collider.enabled = false;
-						//}
+						hit.collider.enabled = false;
+						hit.transform.gameObject.tag = "Doomed";
 						Instantiate (hitEffect, hit.point, Quaternion.identity);
 					} else if (hit.transform.gameObject.layer == wall) {
 						Debug.Log (hit.distance + " m away, to " + hit.point);
@@ -47,7 +42,6 @@ public class Weapon : MonoBehaviour {
 						hitWall = true;
 					} else {
 						Debug.Log ("Something went wrong. Hit layer: "+hit.transform.gameObject.layer + " hit point: " + hit.point);
-						Instantiate (hitEffect, hit.point, Quaternion.identity);
 						hitWall = true;
 					}
 				}
