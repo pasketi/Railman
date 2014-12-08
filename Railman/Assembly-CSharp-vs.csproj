@@ -46,10 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ObjectDestroyer.cs" />
      <Compile Include="Assets\Scripts\ParticleKiller.cs" />
      <Compile Include="Assets\Scripts\Scrapped code\WeaponScript.cs" />
-     <Compile Include="Assets\Scripts\Target.cs" />
+     <Compile Include="Assets\Scripts\TimeFreeze.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
+     <None Include="Assets\Shaders\GreyScale.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>/Users/Pasketi/Git/Railman/Railman/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
