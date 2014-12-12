@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Weapon : MonoBehaviour {
+public class PlayerInputManager : MonoBehaviour {
 
 	LevelManager manager;
 	public GameObject hitEffect;
@@ -55,6 +55,10 @@ public class Weapon : MonoBehaviour {
 			hitWall = false;
 			i = 0;
 			manager.useBullet();
+		}
+
+		if (Input.GetKeyDown(KeyCode.E)){
+			manager.toggleTimeFreeze();
 		}
 	}
 }
