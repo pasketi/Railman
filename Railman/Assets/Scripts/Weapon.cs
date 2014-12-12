@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour {
 
+	LevelManager manager;
 	public GameObject hitEffect;
 	public AudioSource soundEmitter;
 
@@ -13,12 +14,12 @@ public class Weapon : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		manager = (LevelManager) GameObject.Find("oLevelManager").GetComponent(typeof(LevelManager));
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0)){
+		if (Input.GetMouseButtonDown(0) && manager.getBulletsLeft() != 0){
 			Instantiate (soundEmitter, Camera.main.transform.position, Quaternion.identity);
 			mid = new Vector3(Screen.width/2, Screen.height/2);
 			Ray ray = Camera.main.ScreenPointToRay (mid);
@@ -53,6 +54,7 @@ public class Weapon : MonoBehaviour {
 			}
 			hitWall = false;
 			i = 0;
+			manager.useBullet();
 		}
 	}
 }

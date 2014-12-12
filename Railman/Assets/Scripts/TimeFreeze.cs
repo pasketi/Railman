@@ -3,17 +3,17 @@ using System.Collections;
 
 public class TimeFreeze : MonoBehaviour {
 
+	LevelManager manager;
+
 	// Use this for initialization
 	void Start () {
-	
+		manager = (LevelManager) GameObject.Find("oLevelManager").GetComponent(typeof(LevelManager));
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.E)){
-			if (Time.timeScale != 0) {
-				Time.timeScale = 0;
-			} else Time.timeScale = 1;
+			manager.toggleTimeFreeze();
 		}
 	}
 }
