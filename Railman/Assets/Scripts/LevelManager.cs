@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 
+	public int tilesPerUnit = 10;
 	public bool isTimeFreeze, canTimeFreeze;
 	public int weaponShots;
 	private float freezeTime;

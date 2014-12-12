@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ParticleManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Character/PlayerInputManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="74" Column="22" />
-      <File FileName="Assets/Scripts/ObjectHandler.cs" Line="11" Column="96" />
-      <File FileName="Assets/Scripts/Character/PlayerInputManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SoundEmitter.cs" Line="24" Column="31" />
-      <File FileName="Assets/Scripts/ParticleManager.cs" Line="21" Column="31" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/ObjectHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Character/PlayerInputManager.cs" Line="57" Column="4" />
+      <File FileName="Assets/Scripts/TextureScripts/TileManager.cs" Line="6" Column="23" />
+      <File FileName="Assets/Scripts/TextureScripts/WallpaperManager.cs" Line="12" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
