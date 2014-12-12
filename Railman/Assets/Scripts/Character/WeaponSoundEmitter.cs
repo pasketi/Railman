@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SoundEmitter : MonoBehaviour {
+public class WeaponSoundEmitter : MonoBehaviour {
 
+	LevelManager manager;
 	public AudioClip sound;
 	public float setPitch;
 	AudioSource emitter;
@@ -11,6 +12,7 @@ public class SoundEmitter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		manager = (LevelManager) GameObject.Find("oLevelManager").GetComponent(typeof(LevelManager));
 		emitter = GetComponent<AudioSource>();
 		emitter.pitch = setPitch;
 		duration = sound.length / emitter.pitch;
@@ -19,7 +21,7 @@ public class SoundEmitter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.timeScale != 0){
+		if (!manager.getTimeFreeze()){
 			if (played == false) {
 				emitter.Play();
 				playTime = Time.time;
