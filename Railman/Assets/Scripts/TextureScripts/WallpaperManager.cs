@@ -8,8 +8,8 @@ public class WallpaperManager : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		x = (float) gameObject.renderer.material.mainTexture.height / (float) gameObject.renderer.material.mainTexture.width;
 		y = (float) gameObject.transform.localScale.z;
+		x = (float) gameObject.transform.localScale.x * 10;
 		scale = new Vector2 (x, y);
 		gameObject.renderer.material.SetTextureScale("_MainTex", scale);
 	}

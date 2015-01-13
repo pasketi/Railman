@@ -52,9 +52,17 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void setTimeFreeze(bool boolean){
-		if (boolean && !isTimeFreeze && canTimeFreeze){
+		if (boolean == true && !isTimeFreeze && canTimeFreeze){
+			if (isTimeFreeze != boolean){
+				toggled = true;
+				tLastFrame = true;
+			}
 			isTimeFreeze = boolean;
-		} else if (!boolean && isTimeFreeze){
+		} else if (boolean == false && isTimeFreeze){
+			if (isTimeFreeze != boolean){
+				toggled = true;
+				tLastFrame = true;
+			}
 			isTimeFreeze = boolean;
 		}
 	}
@@ -68,12 +76,10 @@ public class LevelManager : MonoBehaviour {
 		if (isTimeFreeze) {
 			freezeTime += Time.deltaTime;
 		}
-		if (freezeTime >= freezeTimeLimit){
-			isTimeFreeze = false;
+		if (freezeTime >= freezeTimeLimit && isTimeFreeze){
+			toggleTimeFreeze();
 			canTimeFreeze = false;
 			freezeTime = freezeTimeLimit;
-			tLastFrame = true;
-			toggled = true;
 		}
 	}
 }
