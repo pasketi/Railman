@@ -87,21 +87,30 @@ public class PlayerInputManager : MonoBehaviour {
 			}
 		} else Debug.Log ("Maximum number of Bounces reached!");
 	}
-
+	void FixedUpdate () {
+		if (Input.GetKeyDown(KeyCode.E)){
+			manager.toggleTimeFreeze();
+		}
+	}
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0) && manager.getBulletsLeft() != 0 && player.velocity.magnitude <= maxShootSpeed){
+
+		//Shoot Script
+		if (Input.GetMouseButtonDown (0) && manager.getBulletsLeft () != 0 && player.velocity.magnitude <= maxShootSpeed) {
 			Instantiate (soundEmitter, Camera.main.transform.position, Quaternion.identity);
 			Instantiate (muzzle, Camera.main.transform.position, Camera.main.transform.rotation);
 			shoot (Camera.main.transform.position, zero);
 			hitWall = false;
 			bounces = 0;
-			manager.useBullet();
+			manager.useBullet ();
 		}
 
-		if (Input.GetKeyDown(KeyCode.E)){
-			manager.toggleTimeFreeze();
+		// Kill app
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit();
 		}
+
+		//Cheats here!
 		if (Input.GetKeyDown(KeyCode.Period)){
 			manager.freezeTimeLimit += 10;
 			manager.canTimeFreeze = true;

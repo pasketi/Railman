@@ -8,14 +8,13 @@ public class LevelManager : MonoBehaviour {
 	public int weaponShots;
 	private float freezeTime;
 	public float freezeTimeLimit;
-	private bool toggled, tLastFrame;
+	private bool toggled;
 	public AudioClip music;
 	public AudioSource[] speaker;
 
 	// Use this for initialization
 	void Start () {
 		toggled = false;
-		tLastFrame = false;
 		isTimeFreeze = false;
 		canTimeFreeze = true;
 		freezeTime = 0f;
@@ -51,11 +50,9 @@ public class LevelManager : MonoBehaviour {
 		if (!isTimeFreeze && canTimeFreeze) {
 			isTimeFreeze = true;
 			toggled = true;
-			tLastFrame = true;
 		} else if (isTimeFreeze) {
 			isTimeFreeze = false;
 			toggled = true;
-			tLastFrame = true;
 		}
 	}
 
@@ -63,13 +60,11 @@ public class LevelManager : MonoBehaviour {
 		if (boolean == true && !isTimeFreeze && canTimeFreeze){
 			if (isTimeFreeze != boolean){
 				toggled = true;
-				tLastFrame = true;
 			}
 			isTimeFreeze = boolean;
 		} else if (boolean == false && isTimeFreeze){
 			if (isTimeFreeze != boolean){
 				toggled = true;
-				tLastFrame = true;
 			}
 			isTimeFreeze = boolean;
 		}
@@ -77,9 +72,6 @@ public class LevelManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-		if (tLastFrame && toggled) tLastFrame = false;
-		else if (toggled && !tLastFrame) toggled = false;
 
 		if (isTimeFreeze) {
 			freezeTime += Time.deltaTime;
@@ -111,5 +103,9 @@ public class LevelManager : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void LateUpdate () {
+		if (toggled) toggled = false;
 	}
 }
