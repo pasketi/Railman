@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour {
 	private float freezeTime;
 	public float freezeTimeLimit;
 	private bool toggled, tLastFrame;
+	public AudioClip music;
+	public AudioSource[] speaker;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +19,12 @@ public class LevelManager : MonoBehaviour {
 		isTimeFreeze = false;
 		canTimeFreeze = true;
 		freezeTime = 0f;
+		for (int i = 0; i < speaker.Length;i++){
+			speaker[i].clip = music;
+			speaker[i].loop = true;
+			speaker[i].playOnAwake = true;
+			speaker[i].Play();
+		}
 	}
 
 	public bool getToggled(){
@@ -75,11 +83,33 @@ public class LevelManager : MonoBehaviour {
 
 		if (isTimeFreeze) {
 			freezeTime += Time.deltaTime;
+			for (int i = 0; i < speaker.Length; i++){
+				if (speaker[i] != null){
+					if (speaker[i].isPlaying && speaker[i] != null){ 
+						speaker[i].Pause();
+					}
+				}
+			}
+		} else {
+			for (int i = 0; i < speaker.Length; i++){
+				if (speaker[i] != null){
+					if (!speaker[i].isPlaying){ 
+						speaker[i].Play();
+					}
+				}
+			}
 		}
 		if (freezeTime >= freezeTimeLimit && isTimeFreeze){
 			toggleTimeFreeze();
 			canTimeFreeze = false;
 			freezeTime = freezeTimeLimit;
+			for (int i = 0; i < speaker.Length; i++){
+				if (speaker[i] != null){
+					if (!speaker[i].isPlaying){ 
+						speaker[i].Play();
+					}
+				}
+			}
 		}
 	}
 }

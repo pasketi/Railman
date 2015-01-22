@@ -17,7 +17,7 @@ public class RailManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (lived == 0 && manager.isTimeFreeze) line.SetWidth(0,0);
+		if (lived == 0 && manager.isTimeFreeze) line.SetWidth(0.1f,0.1f);
 		else line.SetWidth(width, width);
 
 		if (lived < lifeTime && !manager.isTimeFreeze) {

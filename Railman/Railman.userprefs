@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Character/PlayerInputManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shaders/Mirror.shader">
     <Files>
-      <File FileName="Assets/Scripts/Character/PlayerInputManager.cs" Line="52" Column="63" />
+      <File FileName="Assets/Scripts/ObjectHandler.cs" Line="41" Column="3" />
+      <File FileName="Assets/Scripts/Character/RailManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Shaders/Mirror.shader" Line="130" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

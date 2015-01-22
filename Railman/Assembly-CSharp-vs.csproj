@@ -61,7 +61,6 @@
      <Compile Include="Assets\Scripts\UI\UIBulletUpdate.cs" />
      <Compile Include="Assets\Scripts\UI\UIMovementIndicator.cs" />
      <Compile Include="Assets\Scripts\UI\UITimeUpdate.cs" />
-     <None Include="Assets\Shaders\GreyScale.shader" />
      <None Include="Assets\Models\jkm_muzzleflash\readme.txt" />
      <None Include="Assets\Models\jkm_muzzleflash\gpl.txt" />
  <Reference Include="UnityEngine.UI">

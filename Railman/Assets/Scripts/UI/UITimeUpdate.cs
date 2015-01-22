@@ -15,6 +15,6 @@ public class UITimeUpdate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		UIText.text = manager.getTimeLeft().ToString();
+		UIText.text = manager.getTimeLeft().ToString("0.00");
 	}
 }

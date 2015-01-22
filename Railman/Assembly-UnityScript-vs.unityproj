@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Character\CharacterMotor.js" />
      <Compile Include="Assets\Scripts\Character\FPSInputController.js" />
-     <None Include="Assets\Shaders\GreyScale.shader" />
      <None Include="Assets\Models\jkm_muzzleflash\readme.txt" />
      <None Include="Assets\Models\jkm_muzzleflash\gpl.txt" />
  <Reference Include="UnityEngine.UI">
