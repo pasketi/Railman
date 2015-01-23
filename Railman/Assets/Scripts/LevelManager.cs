@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour {
 	private bool toggled;
 	public AudioClip music;
 	public AudioSource[] speaker;
+	public string levelName;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +45,10 @@ public class LevelManager : MonoBehaviour {
 
 	public bool getTimeFreeze () {
 		return isTimeFreeze;
+	}
+
+	public string getLevelName () {
+		return levelName;
 	}
 
 	public void toggleTimeFreeze() {

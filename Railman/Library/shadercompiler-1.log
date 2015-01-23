@@ -5,9 +5,10 @@ Cmd: preprocess
   insize=1012 outsize=273 ok=1
 Cmd: preprocess
   insize=656 outsize=653 ok=1
-Cmd: preprocess
-  insize=656 outsize=653 ok=1
-Cmd: preprocess
+CEnd of pipe
+
+Quitting shader compiler process
+md: preprocess
   insize=430 outsize=1176 ok=1
 Cmd: compileSnippet
   api=0 type=0 insize=4279 outsize=919 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
