@@ -16,19 +16,19 @@ public class ObjectHandler : MonoBehaviour {
 
 		//Time toggle -handler
 		if (manager.getTimeFreeze() == false && manager.getToggled()) {
-			gameObject.rigidbody.isKinematic = false;
-			gameObject.rigidbody.angularVelocity = aVelocity;
-			gameObject.rigidbody.velocity = tVelocity;
+			gameObject.GetComponent<Rigidbody>().isKinematic = false;
+			gameObject.GetComponent<Rigidbody>().angularVelocity = aVelocity;
+			gameObject.GetComponent<Rigidbody>().velocity = tVelocity;
 		} else if (manager.getTimeFreeze() == true && manager.getToggled()) {
-			gameObject.rigidbody.velocity = Vector3.zero;
-			gameObject.rigidbody.angularVelocity = Vector3.zero;
-			gameObject.rigidbody.isKinematic = true;
+			gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+			gameObject.GetComponent<Rigidbody>().isKinematic = true;
 		}
 
 		//Velocity updater
 		if (!manager.getTimeFreeze()) {
-			aVelocity = gameObject.rigidbody.angularVelocity;
-			tVelocity = gameObject.rigidbody.velocity;
+			aVelocity = gameObject.GetComponent<Rigidbody>().angularVelocity;
+			tVelocity = gameObject.GetComponent<Rigidbody>().velocity;
 		}
 
 		//Destroy object once it has been hit and time is not frozen

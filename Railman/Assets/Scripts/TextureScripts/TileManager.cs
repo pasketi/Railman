@@ -16,7 +16,7 @@ public class TileManager : MonoBehaviour {
 		x = gameObject.transform.localScale.x * unitScale;
 		y = gameObject.transform.localScale.z * unitScale;
 		scale = new Vector2(tilesPerUnit * x, tilesPerUnit * y);
-		gameObject.renderer.material.SetTextureScale("_MainTex", scale);
+		gameObject.GetComponent<Renderer>().material.SetTextureScale("_MainTex", scale);
 	}
 	
 	// Update is called once per frame

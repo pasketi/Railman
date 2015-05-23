@@ -10,9 +10,9 @@ public class ParticleManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		manager = (LevelManager) GameObject.Find("oLevelManager").GetComponent(typeof(LevelManager));
-		lifeTime = gameObject.particleSystem.duration + gameObject.particleSystem.startLifetime;
+		lifeTime = gameObject.GetComponent<ParticleSystem>().duration + gameObject.GetComponent<ParticleSystem>().startLifetime;
 		runTime = 0f;
-		gameObject.particleSystem.Pause();
+		gameObject.GetComponent<ParticleSystem>().Pause();
 	}
 	
 	// Update is called once per frame
@@ -20,7 +20,7 @@ public class ParticleManager : MonoBehaviour {
 		//initiate effect when time runs
 		if (!manager.getTimeFreeze() && !started) {
 			started = true;
-			gameObject.particleSystem.Play();
+			gameObject.GetComponent<ParticleSystem>().Play();
 		}
 
 		//When running, increment runtime
@@ -30,7 +30,7 @@ public class ParticleManager : MonoBehaviour {
 
 		//Pause if time frozen 
 		if (manager.getTimeFreeze() && started) {
-			gameObject.particleSystem.Pause();
+			gameObject.GetComponent<ParticleSystem>().Pause();
 		}
 
 		//Destroy when done

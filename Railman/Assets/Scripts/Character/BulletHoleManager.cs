@@ -8,11 +8,11 @@ public class BulletHoleManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		manager = (LevelManager) GameObject.Find("oLevelManager").GetComponent(typeof(LevelManager));
-		if (manager.isTimeFreeze) gameObject.renderer.enabled = false;
+		if (manager.isTimeFreeze) gameObject.GetComponent<Renderer>().enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!manager.isTimeFreeze && gameObject.renderer.enabled == false) gameObject.renderer.enabled = true;
+		if (!manager.isTimeFreeze && gameObject.GetComponent<Renderer>().enabled == false) gameObject.GetComponent<Renderer>().enabled = true;
 	}
 }

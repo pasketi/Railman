@@ -11,7 +11,7 @@ public class WallpaperManager : MonoBehaviour {
 		y = (float) gameObject.transform.localScale.z;
 		x = (float) gameObject.transform.localScale.x * 10;
 		scale = new Vector2 (x, y);
-		gameObject.renderer.material.SetTextureScale("_MainTex", scale);
+		gameObject.GetComponent<Renderer>().material.SetTextureScale("_MainTex", scale);
 	}
 	
 	// Update is called once per frame
