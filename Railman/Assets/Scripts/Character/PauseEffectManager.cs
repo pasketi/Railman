@@ -17,13 +17,13 @@ public class PauseEffectManager : MonoBehaviour {
 		if (manager.isTimeFreeze) {
 			foreach (Renderer shade in children) {
 				if (shade.material.mainTexture != null){
-					shade.material.mainTexture = (Texture) Resources.LoadAssetAtPath("Assets/Textures/" + manager.getLevelName() + "/BlackAndWhite/" + shade.material.mainTexture.name + ".png", typeof(Texture));
+					shade.material.mainTexture = (Texture) UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Textures/" + manager.getLevelName() + "/BlackAndWhite/" + shade.material.mainTexture.name + ".png", typeof(Texture));
 				}
 			}
 		} else {
 			foreach (Renderer shade in children) {
 				if (shade.material.mainTexture != null){
-					shade.material.mainTexture = (Texture) Resources.LoadAssetAtPath("Assets/Textures/" + manager.getLevelName() + "/Normal/" + shade.material.mainTexture.name + ".png", typeof(Texture));
+					shade.material.mainTexture = (Texture) UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Textures/" + manager.getLevelName() + "/Normal/" + shade.material.mainTexture.name + ".png", typeof(Texture));
 				}
 			}
 		}

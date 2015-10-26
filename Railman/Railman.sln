@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{356AEAEE-3AFB-4124-A11B-E70BAE3C41C7}") = "Railman", "Assembly-CSharp.csproj", "{120E1AF1-2E7D-AA2B-C10A-FB76C0C7EEFB}"
 EndProject
-Project("{356AEAEE-3AFB-4124-A11B-E70BAE3C41C7}") = "Railman", "Assembly-UnityScript.unityproj", "{0122F2F1-1535-0026-B0DB-8C657A57892B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,15 +13,11 @@ Global
 		{120E1AF1-2E7D-AA2B-C10A-FB76C0C7EEFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{120E1AF1-2E7D-AA2B-C10A-FB76C0C7EEFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{120E1AF1-2E7D-AA2B-C10A-FB76C0C7EEFB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0122F2F1-1535-0026-B0DB-8C657A57892B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0122F2F1-1535-0026-B0DB-8C657A57892B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0122F2F1-1535-0026-B0DB-8C657A57892B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0122F2F1-1535-0026-B0DB-8C657A57892B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																														GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

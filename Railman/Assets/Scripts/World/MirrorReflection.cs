@@ -19,6 +19,7 @@ public class MirrorReflection : MonoBehaviour
 	private int m_OldReflectionTextureSize = 0;
 	
 	private static bool s_InsideRendering = false;
+	private bool inArea = false;
 	
 	// This is called when it's known that the object will be rendered by some
 	// camera. We render reflections and do other updates here.
@@ -27,7 +28,7 @@ public class MirrorReflection : MonoBehaviour
 	public void OnWillRenderObject()
 	{
 		var rend = GetComponent<Renderer>();
-		if (!enabled || !rend || !rend.sharedMaterial || !rend.enabled)
+		if (!enabled || !rend || !rend.sharedMaterial || !rend.enabled || !inArea)
 			return;
 		
 		Camera cam = Camera.current;
@@ -73,13 +74,13 @@ public class MirrorReflection : MonoBehaviour
 		
 		reflectionCamera.cullingMask = ~(1<<4) & m_ReflectLayers.value; // never render water layer
 		reflectionCamera.targetTexture = m_ReflectionTexture;
-		GL.SetRevertBackfacing (true);
+		GL.invertCulling = true;
 		reflectionCamera.transform.position = newpos;
 		Vector3 euler = cam.transform.eulerAngles;
 		reflectionCamera.transform.eulerAngles = new Vector3(0, euler.y, euler.z);
 		reflectionCamera.Render();
 		reflectionCamera.transform.position = oldpos;
-		GL.SetRevertBackfacing (false);
+		GL.invertCulling = false;
 		Material[] materials = rend.sharedMaterials;
 		foreach( Material mat in materials ) {
 			if( mat.HasProperty("_ReflectionTex") )
@@ -222,5 +223,20 @@ public class MirrorReflection : MonoBehaviour
 		reflectionMat.m31 = 0F;
 		reflectionMat.m32 = 0F;
 		reflectionMat.m33 = 1F;
+	}
+
+	void OnTriggerEnter (Collider other) {
+		if (other.gameObject.CompareTag ("Player"))
+			inArea = true;
+	}
+	
+	void OnTriggerStay (Collider other) {
+		if (other.gameObject.CompareTag ("Player"))
+			inArea = true;
+	}
+	
+	void OnTriggerExit (Collider other) {
+		if (other.gameObject.CompareTag ("Player"))
+			inArea = false;
 	}
 }
