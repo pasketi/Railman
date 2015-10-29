@@ -1,0 +1,9 @@
+Railman/Library/*
+Railman/Temp/*
+Railman/obj/*
+*.sln
+*.suo
+*.userprefs
+*.csproj
+*.pidb
+*.unityproj
